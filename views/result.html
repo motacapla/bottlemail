@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <title>result</title>
-</head>
+{{ template "head" }}
 <body>
-    <h1>ぼとるめーる が とどいたよ！</h1>
-    <p>おなまえ: {{.name}}</p>
-    <p>めっせーじ: {{.content}}</p>
-    <a href="/">ぼとるめーる を おくる</a>
-    <a href="/messages.html">みんな の めっせーじ を みる</a>
+    <div class="container">
+        <div class="page-header text-center">
+            <h1 class="">メッセージが届いたよ！</h1>
+            <hr>
+        </div>    
+    <div class="list-group">
+        <p><li class="list-group-item">名前: {{.name}}</li></p>
+        <p><li class="list-group-item">内容: {{.content}}</li></p>
+    </div>
+    <a href="/" class="btn btn-outline-primary">もう一度メッセージを送る</a>
+    <a href="/messages.html" class="btn btn-outline-primary">みんなのメッセージを見る</a>
+    </div>
 </body>
-</html>
+{{ template "foot" }}

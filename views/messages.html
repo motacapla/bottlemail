@@ -1,19 +1,22 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <title>messages</title>
-</head>
+{{ template "head" }}
 <body>
-    <h1>みんなのぼとるめーる</h1>
+    <div class="container">
+        <div class="page-header text-center">
+            <h1 class="text-center">みんなのメッセージ</h1>
+            <hr>
+        </div>    
+    <a href="/" class="btn btn-outline-primary">もう一度メッセージを送る</a>
     {{ range $index, $post := .posts }}
-    <ul>
-    <li>{{ $index }} </li>
-    <li>{{ $post.Name }}</li>
-    <li>{{ $post.Content}}</li>    
-    </ul>    
-    {{ end }}    
-    
-    <a href="/">ぼとるめーる を おくる</a>
+    <!-- {{ $index }}  -->
+    <p>
+    <div class="list-group">
+    <div class="list-group-item bg-secondary text-light">{{ $index }} 通目 </div>
+    <div class="list-group-item">名前 : {{ $post.Name }}</div>
+    <div class="list-group-item">内容 : {{ $post.Content}}</div>    
+    </div>
+    </p>
+    {{ end }}
+    <a href="/" class="btn btn-outline-primary">もう一度メッセージを送る</a>
+    </div>
 </body>
-</html>
+{{ template "foot" }}

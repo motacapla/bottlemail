@@ -1,19 +1,23 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <title>ボトルメール</title>
-</head>
+{{ template "head" }}
 <body>
-    <h1>ボトルメール</h1>
-    <p class="top-message">めっせーじ を おくってみませんか?</p>
-    <p class="top-message">かわりに だれかの めっせーじ が とどきます</p>    
+    <div class="container">
+    <div class="page-header text-center">
+      <h1 class="">ボトルメール</h1>
+      <hr>
+    </div>
+    <p class="text-center">ボトルメールを送ってみませんか?</p>
+    <p class="text-center">代わりに誰かのメッセージが届きます (・ω・)</p>    
     <form  method="POST" action="./send">
-        おなまえ
-        <input name="name" type="text" >
-        ないよう
-        <input name="content" type="text" >
-        <button class="btn btn-lg btn-primary btn-block" type="submit">おくる</button>
+        <div class="form-group">
+        名前
+        <input name="name" class="border border-dark form-control" type="text" placeholder="もた">
+        </div>
+        <div class="form-group">
+        内容
+        <input name="content" class="border border-dark form-control" type="text" placeholder="やっほー！">
+        </div>
+        <button class="btn btn-outline-primary" type="submit">メッセージを送る</button>
     </form>
+    </div>
 </body>
-</html>
+{{ template "foot" }}
