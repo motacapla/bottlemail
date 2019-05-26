@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"fmt"
 	"math/rand"
 	"net/http"
 	"time"
@@ -32,6 +33,8 @@ func Send(ctx *gin.Context) {
 
 	//他のメッセージからランダムに表示するものを選択
 	rand.Seed(time.Now().UnixNano())
+	fmt.Println(len(Posts))
+
 	length := len(Posts)
 	if length > 0 {
 		num := rand.Intn(length)
@@ -46,7 +49,7 @@ func Send(ctx *gin.Context) {
 			"content": "Enjoy bottlemailing!",
 		})
 	}
-	ctx.Redirect(302, "/result.html")
+	//ctx.Redirect(302, "/result.html")
 }
 
 //Messages : メッセージ入力画面, ランディング
