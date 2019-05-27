@@ -11,7 +11,8 @@ type Post struct {
 
 //DBInit : 初期化
 func DBInit() {
-	db, err := gorm.Open("sqlite3", "post.sqlite3")
+	//db, err := gorm.Open("sqlite3", "post.sqlite3")
+	db, err := gorm.Open("postgres",  "user=tikeda password=root dbname=bottlemail sslmode=disable")
 	if err != nil {
 		panic("[dbInit] failed to open db")
 	}
@@ -21,7 +22,8 @@ func DBInit() {
 
 //DBInsert : データを挿入
 func DBInsert(name string, content string) {
-	db, err := gorm.Open("sqlite3", "post.sqlite3")
+	//db, err := gorm.Open("sqlite3", "post.sqlite3")
+        db, err := gorm.Open("postgres",  "user=tikeda password=root dbname=bottlemail sslmode=disable")
 	if err != nil {
 		panic("[dbInsert] failed to open db")
 	}
@@ -31,7 +33,8 @@ func DBInsert(name string, content string) {
 
 //DBGetAll : 全データを取得
 func DBGetAll() []Post {
-	db, err := gorm.Open("sqlite3", "post.sqlite3")
+	//db, err := gorm.Open("sqlite3", "post.sqlite3")
+	db, err := gorm.Open("postgres",  "user=tikeda password=root dbname=bottlemail sslmode=disable")
 	if err != nil {
 		panic("[dbGetAll] failed to open db")
 	}
@@ -43,7 +46,8 @@ func DBGetAll() []Post {
 
 //DBGetExceptMe : 対象以外のデータ取得
 func DBGetExceptMe(name string) []Post {
-	db, err := gorm.Open("sqlite3", "post.sqlite3")
+	//db, err := gorm.Open("sqlite3", "post.sqlite3")
+        db, err := gorm.Open("postgres",  "user=tikeda password=root dbname=bottlemail sslmode=disable")
 	if err != nil {
 		panic("[dbGetAll] failed to open db")
 	}
