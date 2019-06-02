@@ -1,4 +1,6 @@
 # bottlemail
+https://bottlemail.appspot.com/
+
 ## これは何?
 ボトルメールを簡単に送りあえるアプリをつくりました!
 App Engine(Golang) + CloudSQL(MySQL) の構成です
