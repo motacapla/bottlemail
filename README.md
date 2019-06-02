@@ -13,7 +13,7 @@ $ gcloud app deploy
 
 ### ローカル環境
 - CloudSQLへの接続用プロキシ
-$ ./cloud_sql_proxy -instances=bottlemail:asia-east2:bottlemaildb=tcp:3306
+$ ./cloud_sql_proxy -instances=<CONNECT_NAME>=tcp:3306
 これでローカルホストを通じてCloudSQL側のデータベースにアクセス可能
 
 - デバック
